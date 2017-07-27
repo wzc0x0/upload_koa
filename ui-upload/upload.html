@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>上传</title>
+	<style>
+		img{width: 200px;height: auto}
+	</style>
+</head>
+<body>
+	<input type="file"  id="up-load" name="1"  multiple>
+	<input type="submit" onclick="sendFiles()">
+	<div id="container"></div>
+	<!--<script src="commit.js"></script>-->
+	<script src="webUpload.min.js"></script>
+	<script>
+		var upload = document.getElementById("up-load");
+		var content = document.getElementById("container");
+		upload.addEventListener("change",handleFile,false);
+		function handleFile(){
+		   [].map.call(this.files,function (res) {
+		       WebUploadImg(res).then(ret=>{
+		      		//return ret;
+                   var xhr = new XMLHttpRequest();
+                   xhr.open('POST', 'http://localhost:4000/upload');
+
+                   xhr.onload = function () {
+                       if (xhr.status === 200) {
+                           // 上传成功
+                       } else {
+                           // 处理其他情况
+                       }
+                   };
+
+                   xhr.onerror = function () {
+                       // 处理错误
+                   };
+
+                   xhr.upload.onprogress = function (e) {
+                       // 上传进度
+                       var percentComplete = ((e.loaded / e.total) || 0) * 100;
+                       console.log(percentComplete);
+                   };
+
+                   // 添加参数
+                   //ret.formData.append('fileLen', ret.fileLen);
+
+                   // 触发上传
+                   xhr.send(ret.formData);
+                   /* ==================================================== */
+
+                   return ret;
+			   })
+           });
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "ui-upload",
+  "version": "1.0.0",
+  "description": "webUploaderImg for H5 & received by koa",
+  "main": "webUpload.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wzc0x0/upload_koa"
+  },
+  "keywords": [
+    "webUploaderImg",
+    "HTML5",
+    "koa"
+  ],
+  "author": "wzc0x0",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
+}

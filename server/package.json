@@ -1,0 +1,21 @@
+{
+  "name": "wangsidi",
+  "version": "1.0.0",
+  "description": "new koa pro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wangsidi",
+  "license": "ISC",
+  "dependencies": {
+    "co-busboy": "^1.3.1",
+    "fs": "0.0.1-security",
+    "koa": "^1.2.4",
+    "koa-bodyparser": "^2.3.0",
+    "koa-cors": "0.0.16",
+    "koa-frouter": "^0.5.0",
+    "koa-static": "^2.0.0",
+    "path": "^0.12.7"
+  }
+}
