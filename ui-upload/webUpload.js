@@ -3,6 +3,9 @@
  * For:PC Upload Image
  * And so on...
  */
+    //polyfill IE11
+    var Promise = require('./lib/Promise');
+
     function WebUploadImg (file, opts) {
         var that = this;
 
@@ -57,12 +60,12 @@
         }
 
         if (!document.createElement('canvas').getContext) {
-            throw new Error('浏览器不支持canvas');
+            throw new Error('Your browser dose not support canvas!');
         }
 
         return new Promise(function (resolve,reject) {
             img.onerror = function () {
-                var err = new Error('加载图片失败');
+                var err = new Error('Loader Image failure!');
                 reject(err);
                 throw err;
             };
