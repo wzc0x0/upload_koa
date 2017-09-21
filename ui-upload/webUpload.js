@@ -104,13 +104,9 @@
                             if(!that.hasOwnProperty(p)) continue;
                             that[p] = null;
                         }
-                        try {
-                            URL.revokeObjectURL(that.blob);
-                        }catch (e){
-                            var err = new Error("Global variable URL is polluted");
-                            console.log(e);
-                            throw err;
-                        }
+
+                        typeof URL === "function" && URL.revokeObjectURL(that.blob);
+
                     })
             };
         })
